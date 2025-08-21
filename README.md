@@ -6,9 +6,9 @@ It maintains short-term conversation memory using a sliding window so replies st
 
 ## My System
 
-`CPU: i3-1005G1 Dual Core`
-`RAM: 4GB`
-`GPU: Intel UHD Graphics`
+- `CPU: i3-1005G1 Dual Core`
+- `RAM: 4GB`
+- `GPU: Intel UHD Graphics`
 
 ## Project Layout
 ```text
