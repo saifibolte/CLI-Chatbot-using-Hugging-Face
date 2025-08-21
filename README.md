@@ -4,6 +4,12 @@
 A minimal, modular command-line chatbot that runs a small Hugging Face text-generation model locally. 
 It maintains short-term conversation memory using a sliding window so replies stay coherent across turns.
 
+## My System
+
+`CPU: i3-1005G1 Dual Core`
+`RAM: 4GB`
+`GPU: Intel UHD Graphics`
+
 ## Project Layout
 ```text
 model_loader.py   # Model + tokenizer loading via Hugging Face
