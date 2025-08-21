@@ -16,14 +16,12 @@ README.md         # This file
 
 - Python 3.9+
 - pip packages:
-  - `transformers`
-  - `torch` (CPU or CUDA build)
-  - `accelerate` (optional but recommended)
+  - `transformers - version: 2.19.0`
+  - `torch - version: 2.8.0 ` (CPU or CUDA build)
+  - `accelerate - version: 1.10` (optional but recommended)
 
 Install:
 ```bash
-python -m venv .venv
-source .venv/bin/activate        # On Windows: .venv\\Scripts\\activate
 pip install --upgrade pip
 pip install torch transformers accelerate
 ```
@@ -34,13 +32,11 @@ pip install torch transformers accelerate
 
 ## Choose a Model
 
-The default is `distilgpt2` (fast, very small). You can try other small models, for example:
+The default is `TinyLlama-1.1B-Chat-v1.02` (fast, small). You can try other small models, for example:
 
-- `TinyLlama/TinyLlama-1.1B-Chat-v1.0`
+- `distilgpt2`
 - `microsoft/phi-2` (non-commercial license; CPU-only may be slow)
 - Any local path to a compatible causal LM
-
-> If a model lacks a pad token (e.g., GPT-2 variants), we map pad to eos automatically.
 
 ## Run the Chatbot
 
@@ -64,10 +60,12 @@ Model loaded. Type /exit to quit.
 
 Then chat:
 ```
-User: What is the capital of France?
-Bot: The capital of France is Paris.
-User: And what about Italy?
-Bot: The capital of Italy is Rome.
+User: What is the capital of India?
+Bot: The capital of France is New Delhi.
+User: And what about France?
+Bot: France's capital city is Paris.
+User: Italy?
+Bot: Italy's captal is Rome.
 User: /exit
 Exiting chatbot. Goodbye!
 ```
@@ -86,17 +84,9 @@ User: <latest message>
 Assistant:
 ```
 
-We stop generation when the model begins a new speaker block (e.g., `\nUser:`).
-
 ## Notes & Troubleshooting
 
-- If you previously tried using `from transformers import Conversation` and saw an ImportError,
-  note that this project **does not** rely on that API. We format prompts ourselves for stability.
 - If generation is too verbose or cuts off early, adjust `--max-new-tokens` and sampling params.
-- On very small models like `distilgpt2`, factual accuracy is limited—this is a framework
-  for integrating **any** compatible model, not a knowledge authority.
+- On very small models like `distilgpt2`, factual accuracy is limited—this is a framework for integrating **any** compatible model, not a knowledge authority.
 - For best responsiveness, prefer lightweight models or enable a GPU.
 
-## License
-
-MIT for this code. Each model has its own license; check the model card before use.
